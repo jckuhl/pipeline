@@ -24,16 +24,18 @@ public class JDBCConnection {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
 			Connection conn = null;
+		
+//			Properties props = new Properties();
+//			inp = new FileInputStream("/Users/jonathankuhl/Documents/workspace-sts-3.9.5.RELEASE/project1/src/main/resources/project1.properties");
+//			props.load(inp);
 			
-			String currentDir = new File(".").getAbsolutePath();
+//			String endpoint = props.getProperty("jdbc.url");
+//			String username = props.getProperty("jdbc.username");
+//			String password = props.getProperty("jdbc.password");
 			
-			Properties props = new Properties();
-			inp = new FileInputStream("/Users/jonathankuhl/Documents/workspace-sts-3.9.5.RELEASE/project1/src/main/resources/project1.properties");
-			props.load(inp);
-			
-			String endpoint = props.getProperty("jdbc.url");
-			String username = props.getProperty("jdbc.username");
-			String password = props.getProperty("jdbc.password");
+			String endpoint = "jdbc:oracle:thin:@my-first-database.cxznkdpsuzxt.us-east-1.rds.amazonaws.com:1521:ORCL";
+			String username = "jkuhl";
+			String password = "1337beer";
 			
 			conn = DriverManager.getConnection(endpoint, username, password);
 			
@@ -43,12 +45,12 @@ public class JDBCConnection {
 			e.printStackTrace();
 			log.error(e.getMessage());
 		} finally {
-			try {
-				inp.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+//			try {
+//				inp.close();
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 		}
 		return null;
 	}
