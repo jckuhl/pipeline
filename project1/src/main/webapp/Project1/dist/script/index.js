@@ -369,7 +369,7 @@ new Vue({
             });
         }
         let currentEmployee = await Connection.get(
-            '/project1/getCurrentEmployee.do', 
+            'project1/getCurrentEmployee.do', 
             { 
                 method: "POST"
         });
