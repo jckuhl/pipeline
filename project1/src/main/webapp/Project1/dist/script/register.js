@@ -31,7 +31,7 @@ new Vue({
     methods: {
         async findEmployee() {
             event.preventDefault();
-            this.employees = await Connection.get('project1/getEmployees.do', { method: "POST"});
+            this.employees = await Connection.get('/project1/getEmployees.do', { method: "POST"});
             this.employeeFound = this.employees.filter(empl=> { 
                 return empl.fname.toLowerCase().trim() == this.fname.toLowerCase().trim() && 
                     empl.lname.toLowerCase().trim() == this.lname.toLowerCase().trim() && 
@@ -41,7 +41,7 @@ new Vue({
         },
         async validateUsername() {
             this.usernameAttempts += 1;
-            const usernameTaken = await Connection.get('project1/validateUsername.do', {
+            const usernameTaken = await Connection.get('/project1/validateUsername.do', {
                 method: 'POST', 
                 body: JSON.stringify(this.username),
                 headers: {
