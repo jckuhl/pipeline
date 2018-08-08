@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Employee Reimbursement System</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../style/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <div class="jumbotron">
+                    <h1>Username recovery</h1>
+                    <p>Please enter some information to recover your username:</p>
+                    <div class="formgroup">
+                        <form>
+                            <label for="fname">First Name:</label>
+                            <input type="text" name="fname" class="form-control">
+                            <label for="lname">Last Name: </label>
+                            <input type="text" name="lname" class="form-control">
+                            <label for="employeeId">Employee Id: </label>
+                            <input type="text" name="employeeId" class="form-control">
+                            <label for="email">Email: </label>
+                            <input type="text" name="email" class="form-control">
+                            <button class="btn btn-primary">Submit</button>
+                            <div id="response">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../script/recoverusername.js" type="module"></script>
+</body>
+</html>

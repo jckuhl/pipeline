@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Employee Reimbursement System</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../style/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <div class="jumbotron">
+                    <h1>Employee Reimbursement System</h1>
+                    <p>Welcome to the ERS!  Please log in with your username and password.</p>
+                    <div class="formgroup">
+                        <form method="POST" action="login.do">
+                            <label for="username">Username: </label>
+                            <input type="text" name="username" class="form-control" required>
+                            <p><a href="./forgotusername.html"><small>Forgot Username?</small></a></p>
+                            <label for="password">Password: </label>
+                            <input type="password" name="password" class="form-control" required>
+                            <p><a href="#"><small>Forgot Password?</small></a></p>
+                            <button class="btn btn-primary active" id="submit">Submit</button>
+                            <br>
+                            <p><small>Don't have an account?  Register 
+                                <a href="./register.html">here.</a></small></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

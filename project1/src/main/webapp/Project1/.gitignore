@@ -1,0 +1,6 @@
+node_modules
+some_fake_users.json
+some_fake_expenses.json
+jsonurls.txt
+.DS_Store
+*.icloud

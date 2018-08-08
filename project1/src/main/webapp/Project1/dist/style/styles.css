@@ -1,0 +1,48 @@
+body {
+    background-attachment: fixed;
+    background-image: url('../assets/bluebackground.jpg');
+    color: white;
+}
+
+.jumbotron {
+    color: black;
+}
+
+#navbar {
+    color: black;
+}
+
+input {
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+
+.form-control {
+    margin: 0 0 1rem 0;
+}
+
+.jumbotron {
+    margin-top: 3rem;
+}
+
+nav {
+    background: steelblue;
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: underline;
+}
+
+.pending {
+    background: yellow;
+}
+
+.approved {
+    background: green;
+}
+
+.denied {
+    background: red;
+}

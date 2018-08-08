@@ -1,0 +1,11 @@
+
+1.  Leveraged Vue.js to create a functional, reactive front end
+2.  Utilized Java Servlet in a front controller pattern to handle HTTP requests and responses
+3.  Created a responsive and aesthetic front end using Bootstrap 3.
+4.  Maintained a database with Oracle SQL Developer
+5.  Used the ES6 Fetch API to send and recieve HTTP requests and responses to and from the Servlet
+6.  Tested database and model code using jUnit tests
+7.  Kept a running log of errors and Servlet life-style changes with log4j
+8.  Managed and maintained version control via Git, hosting the project both on Gitlab and Github
+9.  Organized JDBC java code in a Data Access Object design pattern to ensure future flexibility
+10.  Took full advantage of the modern ES6 JavaScript library and the ES6 module pattern to keep my code clean and organized.

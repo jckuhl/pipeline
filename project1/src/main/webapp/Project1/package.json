@@ -1,0 +1,24 @@
+{
+  "name": "project1",
+  "version": "1.0.0",
+  "description": "Project1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/jckuhl/Project1.git"
+  },
+  "author": "Jonathan Kuhl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/jckuhl/Project1/issues"
+  },
+  "homepage": "https://gitlab.com/jckuhl/Project1#README",
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "date-fns": "^1.29.0",
+    "vue": "^2.5.16"
+  }
+}
