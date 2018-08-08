@@ -151,7 +151,7 @@ new Vue({
             this.viewing = options[index];
             if(this.viewing == 'expenses') {
                 this.loadedExpenses = false;
-                let expenseData = await Connection.get('http://localhost:8082/project1/getExpenses.do', { method: "POST"});
+                let expenseData = await Connection.get('/project1/getExpenses.do', { method: "POST"});
                 if(expenseData) {
                     this.loadedExpenses = true;
                     console.log(expenseData);
@@ -170,7 +170,7 @@ new Vue({
                 }
             }
             if(this.viewing == 'employees') {
-                let emplData = await Connection.get('http://localhost:8082/project1/getEmployees.do', { method: "POST"});
+                let emplData = await Connection.get('/project1/getEmployees.do', { method: "POST"});
                 if(emplData) {
                     console.log(emplData);
                     this.employees = emplData.map(empl=> {
@@ -228,7 +228,7 @@ new Vue({
         },
         async generateId() {
             event.preventDefault();
-            const idString = await Connection.get('http://localhost:8082/project1/getEmployeeId.do', { method: 'POST' });
+            const idString = await Connection.get('/project1/getEmployeeId.do', { method: 'POST' });
             if(idString) {
                 this.newEmployee.employeeId = idString;
                 this.generatedId = true;
@@ -249,7 +249,7 @@ new Vue({
                 this.newEmployee.email,
                 false
             );
-            Connection.send('http://localhost:8082/project1/create.do', { 
+            Connection.send('/project1/create.do', { 
                     method: 'POST', 
                     body: JSON.stringify(newEmployee),
                     headers: {
@@ -268,7 +268,7 @@ new Vue({
                 this.employee[member] = this.editEmployee[member];
             }
             this.editMode = false;
-            Connection.send('http://localhost:8082/project1/editemployee.do', {
+            Connection.send('/project1/editemployee.do', {
                     method: 'POST',
                     body: JSON.stringify(this.employee),
                     headers: {
@@ -299,7 +299,7 @@ new Vue({
                     this.employee.employeeId
                 ));
             });
-            Connection.send('http://localhost:8082/project1/submitExpenses.do', {
+            Connection.send('/project1/submitExpenses.do', {
                 method: 'POST', 
                 body: JSON.stringify(expenses),
                 headers: {
@@ -330,7 +330,7 @@ new Vue({
         },
         resolveExpense(expense) {
             expense.approvingManager = this.tempEmployee.fullname;
-            Connection.send('http://localhost:8082/project1/resolveExpense.do', {
+            Connection.send('/project1/resolveExpense.do', {
                 method: 'POST', 
                 body: JSON.stringify(expense),
                 headers: {
@@ -339,7 +339,7 @@ new Vue({
             });
         },
         async logout() {
-            const redirectURL = await Connection.get('http://localhost:8082/project1/logout.do');
+            const redirectURL = await Connection.get('/project1/logout.do');
             if(redirectURL) {
                 window.location.assign(redirectURL.redirect);
             }
@@ -350,7 +350,7 @@ new Vue({
      * For now, we'll use myjson to fake it.
      */
     async mounted() {
-        let emplData = await Connection.get('http://localhost:8082/project1/getEmployees.do', { method: "POST"});
+        let emplData = await Connection.get('/project1/getEmployees.do', { method: "POST"});
         if(emplData) {
             this.employees = emplData.map(empl=> {
                 return new Employee(
@@ -369,7 +369,7 @@ new Vue({
             });
         }
         let currentEmployee = await Connection.get(
-            'http://localhost:8082/project1/getCurrentEmployee.do', 
+            '/project1/getCurrentEmployee.do', 
             { 
                 method: "POST"
         });
@@ -396,7 +396,7 @@ new Vue({
             this.employeeFilter = this.employee.employeeId;
             this.isEmployeeLoaded = true;
         }
-        let expenseData = await Connection.get('http://localhost:8082/project1/getExpenses.do', { method: "POST"});
+        let expenseData = await Connection.get('/project1/getExpenses.do', { method: "POST"});
         if(expenseData) {
             this.expenses = expenseData.map(expense=> {
                 return new Expense(
