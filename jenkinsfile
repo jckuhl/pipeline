@@ -1,0 +1,30 @@
+pipeline {
+    options {
+        timeout(time: 5, unit: 'MINUTES', activity: false) 
+    }
+    agent any
+    stages {
+        stage('Build') {    
+            steps {
+                dir('./project1') {
+                    sh 'mvn clean'
+                    sh 'mvn install'
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing is for chumps'
+            }
+        }
+        stage('Deliver') {
+            steps {
+                dir('./project1') {
+                    sh 'echo $CATALINA_HOME'
+                    sh 'cp target/*.war $CATALINA_HOME/webapps/'
+                    sh 'cp -r target/reimbursementapi $CATALINA_HOME/webapps/'
+                }
+            }
+        }
+    }     
+}
