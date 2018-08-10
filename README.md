@@ -1,5 +1,6 @@
 # pipeline
 
-This is my pipeline
-There are many like it
-But this one is mine
+Revature project1 web app using Java Servet, JDBC, Vue JS, Bootstrap 3
+
+
+Project2 Pipeline set up
